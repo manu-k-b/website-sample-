@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious & Green</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function sendOrder(item) {
+            let message = `I would like to order: ${item}`;
+            let whatsappURL = `https://wa.me/YOUR_PHONE_NUMBER?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        function showMore(section) {
+            const hiddenItems = document.querySelectorAll(`#${section} .hidden`);
+            hiddenItems.forEach(item => item.classList.remove('hidden'));
+            document.getElementById(`show-more-${section}`).style.display = 'none';
+        }
+    </script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-green-700 text-white p-6 flex justify-between items-center shadow-md">
+        <h1 class="text-3xl font-bold">Delicious & Green</h1>
+        <nav>
+            <ul class="flex space-x-6">
+                <li><a href="#cakes" class="hover:text-yellow-300">Cakes</a></li>
+                <li><a href="#decorations" class="hover:text-yellow-300">Decorations</a></li>
+                <li><a href="#plants" class="hover:text-yellow-300">Plants</a></li>
+                <li><a href="#contact" class="hover:text-yellow-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="cakes" class="text-center py-16 bg-yellow-200">
+        <h2 class="text-4xl font-bold">Cakes</h2>
+        <p class="mt-4">Delicious cakes made with love and the finest ingredients.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/cake1.png" alt="Chocolate Cake" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Chocolate Cake - $20</h3>
+                <button onclick="sendOrder('Chocolate Cake')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/cake2.png" alt="Vanilla Cake" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Vanilla Cake - $18</h3>
+                <button onclick="sendOrder('Vanilla Cake')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/cake3.png" alt="Red Velvet Cake" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Red Velvet Cake - $22</h3>
+                <button onclick="sendOrder('Red Velvet Cake')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/cake4.png" alt="Lemon Cake" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Lemon Cake - $19</h3>
+                <button onclick="sendOrder('Lemon Cake')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/cake5.png" alt="Carrot Cake" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Carrot Cake - $21</h3>
+                <button onclick="sendOrder('Carrot Cake')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+        </div>
+        <button id="show-more-cakes" onclick="showMore('cakes')" class="bg-green-700 text-white px-4 py-2 rounded mt-4">Shop More</button>
+    </section>
+
+    <section id="decorations" class="text-center py-16 bg-blue-200">
+        <h2 class="text-4xl font-bold">Decorations</h2>
+        <p class="mt-4">Beautiful decorations to make your events special.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/decoration1.jpg" alt="Floral Decoration" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Floral Decoration - $15</h3>
+                <button onclick="sendOrder('Floral Decoration')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/decoration2.jpg" alt="Balloon Decoration" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Balloon Decoration - $10</h3>
+                <button onclick="sendOrder('Balloon Decoration')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/decoration3.jpg" alt="Table Decoration" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Table Decoration - $12</h3>
+                <button onclick="sendOrder('Table Decoration')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/decoration4.jpg" alt="Wall Decoration" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Wall Decoration - $20</h3>
+                <button onclick="sendOrder('Wall Decoration')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/decoration5.jpg" alt="Ceiling Decoration" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Ceiling Decoration - $25</h3>
+                <button onclick="sendOrder('Ceiling Decoration')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+        </div>
+        <button id="show-more-decorations" onclick="showMore('decorations')" class="bg-green-700 text-white px-4 py-2 rounded mt-4">Shop More</button>
+    </section>
+
+    <section id="plants" class="text-center py-16 bg-green-200">
+        <h2 class="text-4xl font-bold">Live Plants</h2>
+        <p class="mt-4">Bring nature into your home with our range of indoor and outdoor plants.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/succulent.jpg" alt="Succulent" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Succulent - $5</h3>
+                <button onclick="sendOrder('Succulent')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/fern.jpg" alt="Fern" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Fern - $8</h3>
+                <button onclick="sendOrder('Fern')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <img src="images/bonsai.jpg" alt="Bonsai" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Bonsai - $25</h3>
+                <button onclick="sendOrder('Bonsai')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/cactus.jpg" alt="Cactus" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Cactus - $10</h3>
+                <button onclick="sendOrder('Cactus')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+            <div class="bg-white p-4 rounded shadow hidden">
+                <img src="images/orchid.jpg" alt="Orchid" class="w-full h-48 object-cover rounded">
+                <h3 class="text-xl font-bold mt-2">Orchid - $15</h3>
+                <button onclick="sendOrder('Orchid')" class="bg-green-700 text-white px-4 py-2 rounded mt-2">Order</button>
+            </div>
+        </div>
+        <button id="show-more-plants" onclick="showMore('plants')" class="bg-green-700 text-white px-4 py-2 rounded mt-4">Shop More</button>
+    </section>
+
+    <section id="contact" class="text-center py-16 bg-gray-300">
+        <h2 class="text-4xl font-bold">Get in Touch</h2>
+        <p class="mt-4">Contact us for custom orders and inquiries.</p>
+        <p class="mt-2">WhatsApp: <a href="https://wa.me/YOUR_PHONE_NUMBER" class="text-green-700 font-bold">+1234567890</a></p>
+        <p class="mt-2">Email: <a href="mailto:your.email@example.com" class="text-green-700 font-bold">your.email@example.com</a></p>
+    </section>
+
+    <footer class="bg-green-700 text-white text-center p-4">
+        <p>&copy; 2025 Delicious & Green. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
