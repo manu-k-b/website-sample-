@@ -1,24 +1,32 @@
+/* Ensure images are responsive */
 img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
 }
 
-.grid {
-    display: grid;
-    gap: 1rem;
-}
-
-.grid-cols-1 {
-    grid-template-columns: 1fr;
-}
-
-.md\:grid-cols-3 {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-@media (min-width: 768px) {
-    .md\:grid-cols-3 {
-        grid-template-columns: repeat(3, 1fr);
+/* Adjust grid layout for smaller screens */
+@media (max-width: 768px) {
+    .grid-cols-1 {
+        grid-template-columns: 1fr;
     }
+    .md\:grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Additional styles for better mobile experience */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header, footer {
+    padding: 1rem;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    margin-top: 1rem;
 }
